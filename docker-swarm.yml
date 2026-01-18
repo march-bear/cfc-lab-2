@@ -1,0 +1,10 @@
+services:
+  db:
+    image: cfc-lab-1-db
+
+  app:
+    image: cfc-lab-1-app
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
