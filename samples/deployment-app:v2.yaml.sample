@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: app
+spec:
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: cfc-lab-2-app-inst
+        image: cfc-lab-2-app:v2
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 5000

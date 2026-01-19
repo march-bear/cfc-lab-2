@@ -32,8 +32,9 @@ def hello():
     t.incr('counter')
     t.get('counter')
     res = t.execute()
-    return f'This page was visited already {res[0]} times'
+    return f'This page was visited already {res[0]} times. And this text is only in version 2'
 
 
 if __name__ == '__main__':
+    db.set('counter', 0)
     serve(app, host='0.0.0.0', port=5000)
