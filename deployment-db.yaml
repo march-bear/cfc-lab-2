@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deployment
+  labels:
+    app: db
+spec:
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: cfc-lab-2-redis
+        image: cfc-lab-2-db
+        imagePullPolicy: Never
+        ports:
+          - containerPort: 6379
